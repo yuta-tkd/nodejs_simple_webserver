@@ -3,7 +3,13 @@ var http = require('http');
 //http.Serverクラスのインスタンス
 var server = http.createServer();
 
-//requestイベントハンドラーの定義
+//requestイベントハンドラーの定義(複数可能)
+//その1
+server.on('request',function(request,response){
+	//リクエストされたことの表示
+	console.log('request received.');
+});
+//その2
 server.on('request',function(request,response){
 	//リクエストされたURLの表示
 	console.log(request.url);
